@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo_Application</title>
+    <link rel="stylesheet" 
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+          crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="header">TODO APPLICATION</h3>
+            </div>
+        </div>
+        <form id="todoForm">
+            <div class="row">
+                <div class="col-md-3" class="form-group">
+                    <label for="title">Title</label>
+                    <input name="title" type="text" class="form-control" id="title"/>
+                </div>
+                <div class="col-md-7" class="form-group">
+                    <label for="description">Description</label>
+                    <input name="description" type="text" class="form-control" id="description"/>
+                </div>
+                <div class="col-md-2 action">
+                    <button id="btn" type="button" class="btn btn-primary">Add ToDo</button>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="header">TODO LIST</h3>
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">Show Active</label>
+                          </div>   
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">Show Completed</label>
+                          </div>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./todo.js"></script>
+</body>
+</html>
