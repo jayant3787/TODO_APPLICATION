@@ -12,6 +12,14 @@
 
 // 2 way FormDATA
 
+const todos = [{
+    title: 'meeting',
+    description : 'there is a meeting',
+    createdAt : new Date().toString(),
+    status : 'active'
+}];
+
+
 const todoForm = document.querySelector('#todoForm');
 const btn = document.querySelector('#btn');
 
@@ -23,3 +31,17 @@ btn.addEventListener('click', function(){
     }
 
 });
+
+// Also an another way
+
+// function makeItem(title, description, status){
+//     const outerRow = document.createElement('div');
+//     outerRow.classList.add(['row','jumbotron','section']);
+
+//     const titleDiv = document.createElement('div');
+//     titleDiv.classList.add('col-md-2');
+//     titleDiv.textContent = title;
+
+//     outerRow.appendChild(titleDiv);
+
+// }
