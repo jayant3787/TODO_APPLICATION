@@ -28,12 +28,7 @@ btn.addEventListener('click', function(){
         formValues[val] = form.get(val);
     }
 
-    var todo = {
-        title: formValues.title,
-        description: formValues.description,
-        createdAt: new Date().toString(),
-        status: 'active'
-    };
+    var todo = getTodo(formValues.title, formValues.description);
 
     title.value = null;
     description.value = null;
@@ -43,7 +38,10 @@ btn.addEventListener('click', function(){
 });
 
 function getTodo(title, description){
+
+    var id;
     return{
+        id,
         title,
         description,
         createdAt: new Date().toString(),
@@ -86,6 +84,12 @@ function renderATodoItem(todo){
     let statusBtn = document.createElement('button');
     statusBtn.className = 'btn btn-info';
     statusBtn.textContent = 'Mark completed';
+
+    statusBtn.addEventListener('click',() =>{
+        console.log(todo.id);
+
+
+    });
     markCompletedDiv.appendChild(statusBtn);
 
     const actionDiv = document.createElement('div');
@@ -105,6 +109,12 @@ function renderATodoItem(todo){
     statusBtn = document.createElement('button');
     statusBtn.className = 'btn btn-danger';
     statusBtn.textContent = 'Delete';
+
+    statusBtn.addEventListener('click', () =>{
+        console.log(todo.id);
+
+    });
+
     deleteDiv.appendChild(statusBtn);
     actionRow.appendChild(deleteDiv);
 
