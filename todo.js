@@ -16,6 +16,12 @@ let todos = [];
 let isEdit = false;
 let editId = null;
 
+fetchTodos()
+.then(data => {
+    todos = data;
+    render(todos);
+
+})
 
 const todoForm = document.querySelector('#todoForm');
 const btn = document.querySelector('#btn');
@@ -36,7 +42,11 @@ btn.addEventListener('click', function(){
         // Add functionality
 
     var todo = getTodo(formValues.title, formValues.description);
-    todos = [...todos, todo];
+    createTodo(todo)
+    .then(data => {
+        todos = [...todos, todo];
+        render(todos);
+    })
     }
     else{
         //edit functionality
@@ -53,8 +63,6 @@ btn.addEventListener('click', function(){
 
     title.value = null;
     description.value = null;
-
-    render(todos);
 });
 
 function editLock(id){
@@ -75,16 +83,7 @@ function releaseEditLock(){
 
 
 function getTodo(title, description){
-
-    var id;
-
-    if (todos.length == 0) id = 1;
-    else{
-        var last = todos[todos.length - 1];
-        id = last.id + 1;
-    }
     return{
-        id,
         title,
         description,
         createdAt: new Date().toString(),
@@ -217,7 +216,6 @@ function renderATodoItem(todo){
 
 }
 
-render(todos);
 
 
 
